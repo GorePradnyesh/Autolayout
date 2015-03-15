@@ -16,6 +16,19 @@ class ViewController: UIViewController {
     @IBOutlet weak var imgeView: UIImageView!
     
     var kSecurePassword:Bool = true;
+    var imageLayoutConstraint: NSLayoutConstraint?{
+        willSet{
+            if let oldConstraint = imageLayoutConstraint {
+                view.removeConstraint(oldConstraint);
+            }
+        }
+        didSet{
+            if let newConstraint = imageLayoutConstraint{
+                view.addConstraint(newConstraint)
+            }
+        }
+    }
+    
     var userName: String? {
         didSet{
             updateUI();
@@ -31,6 +44,7 @@ class ViewController: UIViewController {
     func updateUI() {
         passwordField.secureTextEntry = kSecurePassword;
         passwordLabel.text = passwordField.secureTextEntry ? "Secure Password" : "Password";
+        image = UIImage(named: "Wallpaper-Cars-4");
     }
 
     @IBAction func login(sender: AnyObject) {
@@ -41,6 +55,30 @@ class ViewController: UIViewController {
     @IBAction func toggleSecurity(sender: AnyObject) {
         kSecurePassword = !kSecurePassword
         updateUI();
+    }
+    
+    var image: UIImage? {
+        get{
+            return self.imgeView.image;
+        }
+        set{
+            self.imgeView.image = newValue;
+            if let constrainedView = imgeView{
+                if let newImage:UIImage = newValue{
+                    let multiplier:CGFloat = newImage.size.width / newImage.size.height
+                    imageLayoutConstraint =  NSLayoutConstraint(
+                        item: constrainedView,
+                        attribute: .Width,
+                        relatedBy: .Equal,
+                        toItem: constrainedView,
+                        attribute: .Height,
+                        multiplier: multiplier,
+                        constant: 0)
+                }else {
+                    imageLayoutConstraint = nil;
+                }
+            }
+        }
     }
 }
 

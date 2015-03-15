@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "Autolayout.ViewController.imageLayoutConstraint.didset : Swift.Optional&lt;ObjectiveC.NSLayoutConstraint&gt;:ViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "Autolayout.ViewController.image.setter : Swift.Optional&lt;ObjectiveC.UIImage&gt;:ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "newImage.size">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
