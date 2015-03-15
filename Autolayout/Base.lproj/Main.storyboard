@@ -47,6 +47,9 @@
                                 <state key="normal" title="Login">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="login:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="qf6-vC-Wy6"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2YJ-Gs-SfD">
                                 <rect key="frame" x="16" y="66" width="79" height="20.5"/>
@@ -54,10 +57,15 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="200" verticalCompressionResistancePriority="500" image="Wallpaper-Cars-4" translatesAutoresizingMaskIntoConstraints="NO" id="wD1-IK-c00">
+                                <rect key="frame" x="16" y="154" width="568" height="426"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="QbB-8v-sbj" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="4RW-CQ-oBq"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="wD1-IK-c00" secondAttribute="bottom" constant="20" id="5Ha-aM-Vjr"/>
+                            <constraint firstItem="wD1-IK-c00" firstAttribute="top" relation="greaterThanOrEqual" secondItem="ZVH-Bn-e1L" secondAttribute="bottom" constant="8" symbolic="YES" id="5zL-5m-rBm"/>
                             <constraint firstItem="gww-0d-ve3" firstAttribute="top" secondItem="QbB-8v-sbj" secondAttribute="bottom" constant="8" symbolic="YES" id="MOw-67-nWM"/>
                             <constraint firstItem="gww-0d-ve3" firstAttribute="leading" secondItem="2YJ-Gs-SfD" secondAttribute="trailing" constant="8" symbolic="YES" id="PK3-ky-65M"/>
                             <constraint firstItem="QbB-8v-sbj" firstAttribute="baseline" secondItem="WYN-GZ-cm2" secondAttribute="baseline" id="SIX-gB-mJ5"/>
@@ -67,14 +75,17 @@
                             <constraint firstItem="WYN-GZ-cm2" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" symbolic="YES" id="fAO-vj-so3"/>
                             <constraint firstItem="2YJ-Gs-SfD" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="h4K-GP-hcM"/>
                             <constraint firstItem="ZVH-Bn-e1L" firstAttribute="baseline" secondItem="khA-C2-OIu" secondAttribute="baseline" id="j1h-WT-6CD"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="wD1-IK-c00" secondAttribute="trailing" id="kta-r6-GXh"/>
                             <constraint firstItem="QbB-8v-sbj" firstAttribute="leading" secondItem="WYN-GZ-cm2" secondAttribute="trailing" constant="8" symbolic="YES" id="mSL-Dx-cAb"/>
                             <constraint firstItem="gww-0d-ve3" firstAttribute="width" secondItem="QbB-8v-sbj" secondAttribute="width" id="qcY-us-it6"/>
                             <constraint firstItem="ZVH-Bn-e1L" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="sa1-GM-zsn"/>
                             <constraint firstItem="gww-0d-ve3" firstAttribute="baseline" secondItem="2YJ-Gs-SfD" secondAttribute="baseline" id="syv-Tw-NXt"/>
+                            <constraint firstItem="wD1-IK-c00" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="wy9-Xp-suE"/>
                             <constraint firstItem="ZVH-Bn-e1L" firstAttribute="top" secondItem="2YJ-Gs-SfD" secondAttribute="bottom" constant="30" id="yuM-jg-Qc1"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="imgeView" destination="wD1-IK-c00" id="jpM-XS-09B"/>
                         <outlet property="loginField" destination="QbB-8v-sbj" id="deg-X2-mmV"/>
                         <outlet property="passwordField" destination="gww-0d-ve3" id="QHL-uF-so6"/>
                         <outlet property="passwordLabel" destination="2YJ-Gs-SfD" id="uRi-1B-bPJ"/>
@@ -84,4 +95,7 @@
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="Wallpaper-Cars-4" width="1920" height="1200"/>
+    </resources>
 </document>

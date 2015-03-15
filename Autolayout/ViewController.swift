@@ -13,8 +13,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var passwordLabel: UILabel!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var loginField: UITextField!
+    @IBOutlet weak var imgeView: UIImageView!
     
-    var kSecurePassword = true;
+    var kSecurePassword:Bool = true;
+    var userName: String? {
+        didSet{
+            updateUI();
+        }
+    };
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +32,11 @@ class ViewController: UIViewController {
         passwordField.secureTextEntry = kSecurePassword;
         passwordLabel.text = passwordField.secureTextEntry ? "Secure Password" : "Password";
     }
+
+    @IBAction func login(sender: AnyObject) {
+        self.userName = self.loginField.text ?? "";
+    }
+
 
     @IBAction func toggleSecurity(sender: AnyObject) {
         kSecurePassword = !kSecurePassword
